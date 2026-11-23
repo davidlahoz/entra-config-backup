@@ -1,0 +1,62 @@
+{
+  "conditions": {
+    "applications": {
+      "applicationFilter": null,
+      "excludeApplications": [],
+      "includeApplications": [
+        "All"
+      ],
+      "includeAuthenticationContextClassReferences": [],
+      "includeUserActions": []
+    },
+    "clientAppTypes": [
+      "exchangeActiveSync",
+      "other"
+    ],
+    "clientApplications": null,
+    "devices": null,
+    "insiderRiskLevels": null,
+    "locations": {
+      "excludeLocations": [
+        "33333333-3333-3333-3333-333333333333"
+      ],
+      "includeLocations": [
+        "All"
+      ]
+    },
+    "platforms": null,
+    "servicePrincipalRiskLevels": [],
+    "signInRiskLevels": [],
+    "userRiskLevels": [],
+    "users": {
+      "excludeGroups": [
+        "00000000-0000-0000-0000-0000000000b1"
+      ],
+      "excludeGuestsOrExternalUsers": null,
+      "excludeRoles": [],
+      "excludeUsers": [],
+      "includeGroups": [],
+      "includeGuestsOrExternalUsers": null,
+      "includeRoles": [],
+      "includeUsers": [
+        "All"
+      ]
+    }
+  },
+  "createdDateTime": "2026-01-15T09:20:01.0000000Z",
+  "displayName": "CA010 Block legacy authentication",
+  "grantControls": {
+    "authenticationStrength": null,
+    "builtInControls": [
+      "block"
+    ],
+    "customAuthenticationFactors": [],
+    "operator": "OR",
+    "termsOfUse": []
+  },
+  "id": "22222222-2222-2222-2222-222222222222",
+  "modifiedDateTime": null,
+  "sessionControls": null,
+  "state": "enabledForReportingButNotEnforced",
+  "templateId": null
+}

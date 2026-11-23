@@ -1,0 +1,64 @@
+{
+  "conditions": {
+    "applications": {
+      "applicationFilter": null,
+      "excludeApplications": [],
+      "includeApplications": [
+        "All"
+      ],
+      "includeAuthenticationContextClassReferences": [],
+      "includeUserActions": []
+    },
+    "clientAppTypes": [
+      "all"
+    ],
+    "clientApplications": null,
+    "devices": null,
+    "insiderRiskLevels": null,
+    "locations": null,
+    "platforms": null,
+    "servicePrincipalRiskLevels": [],
+    "signInRiskLevels": [],
+    "userRiskLevels": [],
+    "users": {
+      "excludeGroups": [
+        "00000000-0000-0000-0000-0000000000b1"
+      ],
+      "excludeGuestsOrExternalUsers": null,
+      "excludeRoles": [],
+      "excludeUsers": [],
+      "includeGroups": [],
+      "includeGuestsOrExternalUsers": null,
+      "includeRoles": [
+        "62e90394-69f5-4237-9190-012177145e10",
+        "194ae4cb-b126-40b2-bd5b-6091b380977d"
+      ],
+      "includeUsers": []
+    }
+  },
+  "createdDateTime": "2026-01-15T09:12:44.0000000Z",
+  "displayName": "CA001 Require MFA for admins",
+  "grantControls": {
+    "authenticationStrength": {
+      "allowedCombinations": [
+        "windowsHelloForBusiness",
+        "fido2",
+        "x509CertificateMultiFactor"
+      ],
+      "displayName": "Phishing-resistant MFA",
+      "id": "00000000-0000-0000-0000-000000000004",
+      "policyType": "builtIn",
+      "requirementsSatisfied": "mfa"
+    },
+    "authenticationStrength@odata.context": "https://graph.microsoft.com/v1.0/$metadata#identity/conditionalAccess/policies('11111111-1111-1111-1111-111111111111')/grantControls/authenticationStrength/$entity",
+    "builtInControls": [],
+    "customAuthenticationFactors": [],
+    "operator": "OR",
+    "termsOfUse": []
+  },
+  "id": "11111111-1111-1111-1111-111111111111",
+  "modifiedDateTime": "2026-03-02T14:05:10.0000000Z",
+  "sessionControls": null,
+  "state": "enabled",
+  "templateId": null
+}

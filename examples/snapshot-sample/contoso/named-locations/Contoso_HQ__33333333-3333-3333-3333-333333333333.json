@@ -1,0 +1,18 @@
+{
+  "@odata.type": "#microsoft.graph.ipNamedLocation",
+  "createdDateTime": "2026-01-10T08:00:00.0000000Z",
+  "displayName": "Contoso HQ",
+  "id": "33333333-3333-3333-3333-333333333333",
+  "ipRanges": [
+    {
+      "@odata.type": "#microsoft.graph.iPv4CidrRange",
+      "cidrAddress": "203.0.113.0/24"
+    },
+    {
+      "@odata.type": "#microsoft.graph.iPv6CidrRange",
+      "cidrAddress": "2001:db8::/48"
+    }
+  ],
+  "isTrusted": true,
+  "modifiedDateTime": "2026-01-10T08:00:00.0000000Z"
+}
