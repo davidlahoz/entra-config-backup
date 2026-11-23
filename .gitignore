@@ -1,0 +1,8 @@
+secrets/
+tenants/*.env
+!tenants/example.env
+*.key
+*.pem
+*.crt
+*.pfx
+.DS_Store
