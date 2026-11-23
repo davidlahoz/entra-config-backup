@@ -1,0 +1,29 @@
+# Usage: TENANT=<label> docker compose run --rm ca-backup
+name: ca-backup
+
+services:
+  ca-backup:
+    image: ca-backup:local        # built locally from this repo, never pulled from a registry
+    build: .
+    pull_policy: build
+    env_file: ./tenants/${TENANT:?set TENANT}.env
+    environment:
+      GIT_SSH_COMMAND: ssh -i /run/secrets/deploy_key -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes
+    secrets: [app_key, app_crt, deploy_key]
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    labels:
+      com.centurylinklabs.watchtower.enable: "false"   # auto-updaters must skip this container
+      diun.enable: "false"
+    restart: "no"
+
+secrets:
+  app_key:
+    file: ./secrets/${TENANT}/app.key
+  app_crt:
+    file: ./secrets/${TENANT}/app.crt
+  deploy_key:
+    file: ./secrets/deploy_key
