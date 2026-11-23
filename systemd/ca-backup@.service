@@ -1,0 +1,13 @@
+[Unit]
+Description=Entra Conditional Access config backup (%i)
+Documentation=https://github.com/davidlahoz/entra-config-backup
+Requires=docker.service
+After=docker.service network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+Environment=TENANT=%i
+WorkingDirectory=/opt/entra-config-backup
+ExecStart=/usr/bin/docker compose run --rm ca-backup
+TimeoutStartSec=20min

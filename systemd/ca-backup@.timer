@@ -1,0 +1,10 @@
+[Unit]
+Description=Nightly Entra Conditional Access config backup (%i)
+
+[Timer]
+OnCalendar=*-*-* 02:30:00 Europe/Berlin
+RandomizedDelaySec=10m
+Persistent=true
+
+[Install]
+WantedBy=timers.target
