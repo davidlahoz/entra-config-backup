@@ -3,7 +3,7 @@
 **Nightly, read-only backup of Microsoft Entra Conditional Access to git: drift detection, change history and audit evidence.**
 
 [![ci](https://github.com/davidlahoz/entra-config-backup/actions/workflows/ci.yml/badge.svg)](https://github.com/davidlahoz/entra-config-backup/actions/workflows/ci.yml)
-[![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![license: AGPL-3.0](https://img.shields.io/badge/license-AGPL--3.0--only-blue.svg)](LICENSE)
 
 One small bash script in a hardened container. It reads your Conditional Access (CA)
 configuration through Microsoft Graph, writes it as stable JSON into a git repository
@@ -207,4 +207,10 @@ Each is a new line in the `TARGETS` map plus the matching read permission.
 
 ## License
 
-[MIT](LICENSE). Security issues: see [SECURITY.md](SECURITY.md).
+Copyright (C) 2026 davidlahoz.
+
+Licensed under the [GNU Affero General Public License v3.0 only](LICENSE) (`AGPL-3.0-only`)
+from v0.2.0 on. Releases up to and including v0.1.0 were published under the MIT license
+and remain available under it.
+
+Security issues: see [SECURITY.md](SECURITY.md).

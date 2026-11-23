@@ -4,6 +4,12 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and the project uses
 [Semantic Versioning](https://semver.org/).
 
+## [0.2.0] - 2026-11-23
+
+### Changed
+- **License changed from MIT to AGPL-3.0-only.** v0.1.0 remains available under MIT.
+- SPDX license identifiers added to source files.
+
 ## [0.1.0] - 2026-11-23
 
 ### Added
@@ -21,4 +27,5 @@ All notable changes to this project are documented here. The format follows
 - systemd template service and timer (02:30 Europe/Berlin, per tenant).
 - CI: shellcheck, hadolint, gitleaks (full history), docker build; actions pinned by SHA.
 
+[0.2.0]: https://github.com/davidlahoz/entra-config-backup/releases/tag/v0.2.0
 [0.1.0]: https://github.com/davidlahoz/entra-config-backup/releases/tag/v0.1.0

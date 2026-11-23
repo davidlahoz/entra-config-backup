@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: AGPL-3.0-only
+# Copyright (C) 2026 davidlahoz
 # ca-backup.sh: nightly, read-only export of Entra Conditional Access config to git.
 # Auth: OAuth2 client credentials with a certificate (no client secrets).
 # See README.md for setup, permissions and troubleshooting.

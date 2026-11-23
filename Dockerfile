@@ -1,4 +1,5 @@
 # syntax=docker/dockerfile:1
+# SPDX-License-Identifier: AGPL-3.0-only
 # Base image pinned by digest. To refresh:
 #   docker buildx imagetools inspect alpine:3.24 --format '{{json .Manifest.Digest}}'
 # then update tag + digest below (Dependabot also proposes updates).
@@ -7,7 +8,7 @@ FROM alpine:3.24.4@sha256:f59abe656b692d901e184be3445e084786602108599d2a51d229c0
 LABEL org.opencontainers.image.title="entra-config-backup" \
       org.opencontainers.image.description="Nightly read-only backup of Entra Conditional Access to git" \
       org.opencontainers.image.source="https://github.com/davidlahoz/entra-config-backup" \
-      org.opencontainers.image.licenses="MIT"
+      org.opencontainers.image.licenses="AGPL-3.0-only"
 
 # Package versions float within the digest-pinned Alpine release (apk does not keep old versions).
 # hadolint ignore=DL3018
