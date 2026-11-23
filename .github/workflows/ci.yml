@@ -1,0 +1,53 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0            # gitleaks scans the full history
+          persist-credentials: false
+
+      - name: shellcheck
+        run: shellcheck --version && shellcheck --severity=style src/*.sh
+
+      - name: hadolint
+        run: >-
+          docker run --rm -i
+          ghcr.io/hadolint/hadolint:v2.15.1@sha256:32dac94127fd60b7b7e3fbfc65e1383b9b5e25c9bfd7b8536de7a539fe68a12d
+          hadolint - < Dockerfile
+
+      - name: gitleaks (full history)
+        run: >-
+          docker run --rm -v "$PWD:/repo:ro"
+          ghcr.io/gitleaks/gitleaks:v8.30.1@sha256:c00b6bd0aeb3071cbcb79009cb16a60dd9e0a7c60e2be9ab65d25e6bc8abbb7f
+          git /repo --redact --no-banner --exit-code 1
+
+  build:
+    runs-on: ubuntu-24.04
+    needs: lint
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: docker build
+        run: docker build --pull -t ca-backup:ci .
+
+      - name: smoke test (fails fast on missing env)
+        run: |
+          set +e
+          out=$(docker run --rm ca-backup:ci 2>&1); rc=$?
+          echo "$out"
+          [ "$rc" -ne 0 ] && grep -q 'missing required env' <<<"$out"
